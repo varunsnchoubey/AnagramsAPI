@@ -19,6 +19,7 @@ class AnagramsProjectApplicationTests {
 	
 	private static final String ANAGRAMS_TRUE  = "{areAnagrams=true}";
 	private static final String ANAGRAMS_FALSE = "{areAnagrams=false}";
+	private static final String ALL_ANAGRAMS = "{anagrams=[ab, ba]}";
 	private static final String BAD_REQUEST = "400 BAD_REQUEST";
 	
 	@Test
@@ -39,10 +40,27 @@ class AnagramsProjectApplicationTests {
 	}
 	
 	@Test
-	void verifyBadRequest() {
+	void verifyBadRequestForAnagramsCheck() {
 		ResponseEntity response = controller.checkAnagrams("abc", "cde*");
 		String statusCode = response.getStatusCode().toString();
 		System.out.println("statusCode response is "+ statusCode);
+		assertThat(statusCode).isEqualTo(BAD_REQUEST);
+				
+	}
+	
+	@Test
+	void verifyAllAnagramsCheck() {
+		ResponseEntity response = controller.allPossibleAnagrams("ab");
+		String statusCode = response.getStatusCode().toString();
+		String json = response.getBody().toString();
+		assertThat(json).isEqualTo(ALL_ANAGRAMS);
+				
+	}
+	
+	@Test
+	void verifyForBadRequestAllAnagramsCheck() {
+		ResponseEntity response = controller.allPossibleAnagrams("ab*");
+		String statusCode = response.getStatusCode().toString();
 		assertThat(statusCode).isEqualTo(BAD_REQUEST);
 				
 	}
