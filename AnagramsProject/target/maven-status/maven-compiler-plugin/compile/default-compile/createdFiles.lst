@@ -1,0 +1,5 @@
+com/anagrams/project/AnagramsProjectApplication.class
+com/anagrams/project/service/AnagramsService.class
+com/anagrams/project/AnagramsHelper.class
+com/anagrams/project/controller/AnagramsController.class
+com/anagrams/project/service/AnagramsServiceImpl.class
