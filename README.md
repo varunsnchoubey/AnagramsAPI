@@ -13,6 +13,13 @@ Once docker has been set up, simply run following commands:
 docker-compose build (This builds the image)
 docker-compose up (This creates docker container and it starts accepting connection request at port 8082)
 
+Running without Docker:
+It requires apache maven to run it locally.
+Import project as Existing Maven Project.
+It will show [boot] sign next to Project name when running on STS or eclipse.
+Run the application with : "Run as anagrams - AnagramsProjectApplication" 
+The project will be started on port 8081 and url will be "http://localhost:8081/anagrams/abc/bac".
+
 API:
 Request : GET
 url : http://localhost:8082/anagrams/abc/bac
