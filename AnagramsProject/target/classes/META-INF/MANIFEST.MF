@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: varunchoubey
+Build-Jdk: 13.0.2
+Implementation-Title: AnagramsProject
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.enrollment
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: https://spring.io/projects/spring-boot/anagrams
+Created-By: Maven Integration for Eclipse
+
