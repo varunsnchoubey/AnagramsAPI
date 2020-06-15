@@ -26,7 +26,6 @@ class AnagramsProjectApplicationTests {
 		ResponseEntity response = controller.checkAnagrams("abc", "bac");
 		String json = response.getBody().toString();
 		System.out.println("json response is "+ json);
-		assertThat(json).contains(ANAGRAMS_TRUE);
 		assertThat(json).isEqualTo(ANAGRAMS_TRUE);		
 	}
 	
@@ -35,7 +34,7 @@ class AnagramsProjectApplicationTests {
 		ResponseEntity response = controller.checkAnagrams("abc", "cde");
 		String json = response.getBody().toString();
 		System.out.println("json response is "+ json);
-		assertThat(json).contains(ANAGRAMS_FALSE);
+		assertThat(json).isEqualTo(ANAGRAMS_FALSE);
 				
 	}
 	
@@ -44,7 +43,7 @@ class AnagramsProjectApplicationTests {
 		ResponseEntity response = controller.checkAnagrams("abc", "cde*");
 		String statusCode = response.getStatusCode().toString();
 		System.out.println("statusCode response is "+ statusCode);
-		assertThat(statusCode).contains(BAD_REQUEST);
+		assertThat(statusCode).isEqualTo(BAD_REQUEST);
 				
 	}
 
