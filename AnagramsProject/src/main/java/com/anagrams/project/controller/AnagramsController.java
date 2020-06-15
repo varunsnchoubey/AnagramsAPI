@@ -36,7 +36,7 @@ public class AnagramsController {
 	}
 	
 	@RequestMapping(value = "/anagrams/{string1}")
-	public ResponseEntity<Map<String, List<String>>> checkWordValid(@PathVariable String string1) {
+	public ResponseEntity<Map<String, List<String>>> allPossibleAnagrams(@PathVariable String string1) {
 		System.out.println("string1 " + string1);
 		boolean validWord = svc.isValidWord(string1);
 		System.out.println("valid Word " + validWord);
